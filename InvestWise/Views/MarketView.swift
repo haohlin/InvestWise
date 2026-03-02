@@ -55,18 +55,21 @@ struct MarketView: View {
     }
 
     private func redditRow(_ post: RedditPost) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(post.title)
-                .font(.subheadline)
-                .lineLimit(2)
-            HStack(spacing: 12) {
-                Label("\(post.score)", systemImage: "arrow.up")
-                Label("\(post.numComments)", systemImage: "bubble.right")
+        Link(destination: URL(string: "https://www.reddit.com" + post.permalink)!) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(post.title)
+                    .font(.subheadline)
+                    .lineLimit(2)
+                HStack(spacing: 12) {
+                    Label("\(post.score)", systemImage: "arrow.up")
+                    Label("\(post.numComments)", systemImage: "bubble.right")
+                }
+                .font(.caption2)
+                .foregroundStyle(.secondary)
             }
-            .font(.caption2)
-            .foregroundStyle(.secondary)
+            .padding(.vertical, 2)
         }
-        .padding(.vertical, 2)
+        .buttonStyle(.plain)
     }
 
     private func formattedPrice(_ q: MarketQuote) -> String {

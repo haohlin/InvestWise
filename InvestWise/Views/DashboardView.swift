@@ -173,38 +173,44 @@ struct DashboardView: View {
     }
 
     private func newsRow(_ item: NewsItem) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text(item.source)
-                    .font(.caption2.weight(.semibold))
-                    .foregroundStyle(.teal)
-                Spacer()
-                NewsSentimentBadge(tag: item.sentimentTag)
+        Link(destination: URL(string: item.url) ?? URL(string: "https://")!) {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text(item.source)
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.teal)
+                    Spacer()
+                    NewsSentimentBadge(tag: item.sentimentTag)
+                }
+                Text(item.title)
+                    .font(.subheadline)
+                    .lineLimit(2)
+                Text(item.publishedAt, style: .relative)
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
             }
-            Text(item.title)
-                .font(.subheadline)
-                .lineLimit(2)
-            Text(item.publishedAt, style: .relative)
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
+            .padding(.vertical, 4)
         }
-        .padding(.vertical, 4)
+        .buttonStyle(.plain)
     }
 
     private func redditRow(_ post: RedditPost) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(post.title)
-                .font(.subheadline)
-                .lineLimit(2)
-            HStack(spacing: 12) {
-                Label("\(post.score)", systemImage: "arrow.up")
-                Label("\(post.numComments)", systemImage: "bubble.right")
-                Text("r/investing")
-                    .foregroundStyle(.orange)
+        Link(destination: URL(string: "https://www.reddit.com" + post.permalink)!) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(post.title)
+                    .font(.subheadline)
+                    .lineLimit(2)
+                HStack(spacing: 12) {
+                    Label("\(post.score)", systemImage: "arrow.up")
+                    Label("\(post.numComments)", systemImage: "bubble.right")
+                    Text("r/investing")
+                        .foregroundStyle(.orange)
+                }
+                .font(.caption2)
+                .foregroundStyle(.secondary)
             }
-            .font(.caption2)
-            .foregroundStyle(.secondary)
+            .padding(.vertical, 4)
         }
-        .padding(.vertical, 4)
+        .buttonStyle(.plain)
     }
 }
