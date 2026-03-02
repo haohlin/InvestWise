@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F067812794058BDFCB22F3 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBFF541A4AD660C5CE71657 /* NewsItem.swift */; };
+		0537F5E903F52A18E0102BB7 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDB93AE61B8FDB0D1048D4 /* KeychainService.swift */; };
+		098DBA4EE922CD4941FDB85D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CA6B90C83146B4A3F24E86 /* ContentView.swift */; };
+		0F269DFEC0695DC7E6BF601F /* QuoteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0965C4AB9F8DDB21E9C8D211 /* QuoteCard.swift */; };
+		13AA3F7B43C6B8FEFFC00867 /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F82FD98C1DB7FA9DB19A529 /* ModelsTests.swift */; };
+		1491D2ECF51251EDA965588C /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED61E136ADE8D5CE4832635 /* NewsService.swift */; };
+		20158D71F3BEFAEE95F17D94 /* GeminiModelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1AB98F9F02786A2E9EF5EB /* GeminiModelRouter.swift */; };
+		21490C28652891EBBEB3FE58 /* CachedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2A59B24CCD8E2DE4C41CCE /* CachedModels.swift */; };
+		27C7DD49418F7107D3268B52 /* InvestWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37A3B1DE79E9F048C8DDBE2 /* InvestWiseTests.swift */; };
+		2F65AB61756C41357A5A8391 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3696B6252BFD6FCF811172 /* Portfolio.swift */; };
+		2F690B72B7BB8B1709895F3F /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFFB37E1A31C58F2569879 /* CacheManager.swift */; };
+		484D3513FA3804019FE2ADAC /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79BD5C067FDADF52A9ACEC5 /* NewsServiceTests.swift */; };
+		513FC1FDB1D2D91ED92E8729 /* ClaudeAIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A08E23A8178D61D461716 /* ClaudeAIServiceTests.swift */; };
+		5154280AA036C41E0987FDBE /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB35F289D6ACAD3D5495490 /* MarketDataService.swift */; };
+		53B112027A0CD2305C20D70E /* ReasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4C60658756D3EDD421A82B /* ReasonsView.swift */; };
+		5995BEE50B3E1459D49B75B1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AE68794046D8188216E3BC /* LoadingOverlay.swift */; };
+		666AEE139A123599DE2F0511 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00CEE7A8FF83CCAD6B1AC0 /* DashboardView.swift */; };
+		6AAD78A4D4C7C9A0A4427C81 /* ClaudeAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EF86399D26AB019DB13D77 /* ClaudeAIService.swift */; };
+		6FCC8C69F1BC573E8CCB2AAD /* SentimentBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE20304416467AD0DFC77442 /* SentimentBadge.swift */; };
+		729A7727854FE81877541D81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C1778BB96A7A77775672E4 /* Assets.xcassets */; };
+		7E1E7E6E3A78BE6DCC01358B /* MarketDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1958661528C733C11091E8 /* MarketDataServiceTests.swift */; };
+		94D686BAD4BFDF8A0141F7CD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B72944BC69035F7E7383E /* SettingsView.swift */; };
+		9B1892339B62DEB2E1D14E30 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCABC69446579D30CE4C52 /* AppState.swift */; };
+		A4750452DD4882DEFAFBF25E /* AIStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B116D58B5B82F93A9E4E095B /* AIStrategy.swift */; };
+		AC6F9DD424A8E2C588FCD364 /* DiagnosticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9452E28F1EAEC50D198555 /* DiagnosticsView.swift */; };
+		BCC655D649E5D43385D3C567 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AF6A56D8DB04C7F98A6E2 /* MarketData.swift */; };
+		C3F33C1CB2AF483EFB5696C5 /* GeminiRateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102CC4D4D36EE51BE7318AE6 /* GeminiRateLimiter.swift */; };
+		D13142E733B617969E52E4B8 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB2ED0F8BA8A3CF18C48AF3 /* PortfolioView.swift */; };
+		D3175FAB0E9DACA3E68ADE49 /* SentimentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA995EEE25E0330484C6BBC /* SentimentService.swift */; };
+		D870C79A42C93F04619F894A /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE98BC090268C2D8F8EFB97 /* MarketView.swift */; };
+		EEE6BE1C6C82273F1528F33B /* RedditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBA6A85988AAB599383434D /* RedditService.swift */; };
+		F444FD9597AE852899A2521D /* AllocationChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15268E4A419FA2A71B5428 /* AllocationChart.swift */; };
+		F72A13F1FA120B186CB7CDDF /* InvestWiseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0798C4B48809B3BE55086 /* InvestWiseApp.swift */; };
+		FDD87FAE54B60833FFA2E86E /* DataOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD0BBF067936A3E8EE8AAC4 /* DataOrchestrator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		217CDBD17C8F46B715B0F3A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8569D159293CE1BAE9C4FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5D5901329DD7FEADA197B7E;
+			remoteInfo = InvestWise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0965C4AB9F8DDB21E9C8D211 /* QuoteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCard.swift; sourceTree = "<group>"; };
+		0EA995EEE25E0330484C6BBC /* SentimentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentService.swift; sourceTree = "<group>"; };
+		102CC4D4D36EE51BE7318AE6 /* GeminiRateLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiRateLimiter.swift; sourceTree = "<group>"; };
+		16EDB93AE61B8FDB0D1048D4 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		1B3696B6252BFD6FCF811172 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		1F82FD98C1DB7FA9DB19A529 /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
+		29C1778BB96A7A77775672E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A1F3C8B7D4E9A0F6B5C2D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB35F289D6ACAD3D5495490 /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
+		2BBA6A85988AAB599383434D /* RedditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditService.swift; sourceTree = "<group>"; };
+		2F1AB98F9F02786A2E9EF5EB /* GeminiModelRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiModelRouter.swift; sourceTree = "<group>"; };
+		35AE68794046D8188216E3BC /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		3DD0BBF067936A3E8EE8AAC4 /* DataOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOrchestrator.swift; sourceTree = "<group>"; };
+		3E15268E4A419FA2A71B5428 /* AllocationChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllocationChart.swift; sourceTree = "<group>"; };
+		3F9452E28F1EAEC50D198555 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsView.swift; sourceTree = "<group>"; };
+		415AF788FA04615B1E3ABF98 /* InvestWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvestWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53EF86399D26AB019DB13D77 /* ClaudeAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeAIService.swift; sourceTree = "<group>"; };
+		6A2A59B24CCD8E2DE4C41CCE /* CachedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedModels.swift; sourceTree = "<group>"; };
+		894AF6A56D8DB04C7F98A6E2 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
+		8D4C60658756D3EDD421A82B /* ReasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonsView.swift; sourceTree = "<group>"; };
+		B116D58B5B82F93A9E4E095B /* AIStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStrategy.swift; sourceTree = "<group>"; };
+		BCE74EB5C9856EEB8E11C507 /* InvestWiseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = InvestWiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBFF541A4AD660C5CE71657 /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
+		C04B72944BC69035F7E7383E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CC2A08E23A8178D61D461716 /* ClaudeAIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeAIServiceTests.swift; sourceTree = "<group>"; };
+		CE1958661528C733C11091E8 /* MarketDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataServiceTests.swift; sourceTree = "<group>"; };
+		D37A3B1DE79E9F048C8DDBE2 /* InvestWiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestWiseTests.swift; sourceTree = "<group>"; };
+		DCB2ED0F8BA8A3CF18C48AF3 /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		DD00CEE7A8FF83CCAD6B1AC0 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		E6CA6B90C83146B4A3F24E86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E79BD5C067FDADF52A9ACEC5 /* NewsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTests.swift; sourceTree = "<group>"; };
+		E9BFFB37E1A31C58F2569879 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		EED61E136ADE8D5CE4832635 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		F9BCABC69446579D30CE4C52 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FAB0798C4B48809B3BE55086 /* InvestWiseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestWiseApp.swift; sourceTree = "<group>"; };
+		FBE98BC090268C2D8F8EFB97 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
+		FE20304416467AD0DFC77442 /* SentimentBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentBadge.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0FA06A735E8FA356DBE519EB /* InvestWise */ = {
+			isa = PBXGroup;
+			children = (
+				E6CA6B90C83146B4A3F24E86 /* ContentView.swift */,
+				FAB0798C4B48809B3BE55086 /* InvestWiseApp.swift */,
+				55F70F07CA2DDF83DC6BBF22 /* Cache */,
+				1DDD5654E03A61DD923A8C16 /* Models */,
+				98999C84B5D6716D2977C589 /* Publishers */,
+				2E847BE0D992B7BFB4E2F363 /* Resources */,
+				63A4EF416155A347A61BCABB /* Services */,
+				A7B1A3C10295F3CD90DADD06 /* ViewModels */,
+				C7BC2CF315D745AF841C12DD /* Views */,
+			);
+			path = InvestWise;
+			sourceTree = "<group>";
+		};
+		115FA4240B1B39EE2CE8A54A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				415AF788FA04615B1E3ABF98 /* InvestWise.app */,
+				BCE74EB5C9856EEB8E11C507 /* InvestWiseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DDD5654E03A61DD923A8C16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B116D58B5B82F93A9E4E095B /* AIStrategy.swift */,
+				894AF6A56D8DB04C7F98A6E2 /* MarketData.swift */,
+				BFBFF541A4AD660C5CE71657 /* NewsItem.swift */,
+				1B3696B6252BFD6FCF811172 /* Portfolio.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		26D239CC20B62527E7EA6101 /* Reasons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reasons;
+			sourceTree = "<group>";
+		};
+		2E847BE0D992B7BFB4E2F363 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29C1778BB96A7A77775672E4 /* Assets.xcassets */,
+				2A1F3C8B7D4E9A0F6B5C2D71 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32A407413DA03F7197D5D2EA /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		55F70F07CA2DDF83DC6BBF22 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				6A2A59B24CCD8E2DE4C41CCE /* CachedModels.swift */,
+				E9BFFB37E1A31C58F2569879 /* CacheManager.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		63A4EF416155A347A61BCABB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				53EF86399D26AB019DB13D77 /* ClaudeAIService.swift */,
+				3DD0BBF067936A3E8EE8AAC4 /* DataOrchestrator.swift */,
+				2F1AB98F9F02786A2E9EF5EB /* GeminiModelRouter.swift */,
+				102CC4D4D36EE51BE7318AE6 /* GeminiRateLimiter.swift */,
+				16EDB93AE61B8FDB0D1048D4 /* KeychainService.swift */,
+				2BB35F289D6ACAD3D5495490 /* MarketDataService.swift */,
+				EED61E136ADE8D5CE4832635 /* NewsService.swift */,
+				2BBA6A85988AAB599383434D /* RedditService.swift */,
+				0EA995EEE25E0330484C6BBC /* SentimentService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7DDA808F5115F2E7AE46CBB9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3E15268E4A419FA2A71B5428 /* AllocationChart.swift */,
+				35AE68794046D8188216E3BC /* LoadingOverlay.swift */,
+				0965C4AB9F8DDB21E9C8D211 /* QuoteCard.swift */,
+				FE20304416467AD0DFC77442 /* SentimentBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8BCD533060F2F6BC951ED90B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		98999C84B5D6716D2977C589 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		A673557DA6A95B29B5F2F14A = {
+			isa = PBXGroup;
+			children = (
+				0FA06A735E8FA356DBE519EB /* InvestWise */,
+				CD69A9EFE90344576587D621 /* InvestWiseTests */,
+				115FA4240B1B39EE2CE8A54A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7B1A3C10295F3CD90DADD06 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F9BCABC69446579D30CE4C52 /* AppState.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BE51E6E7FFE09A30C8334220 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		C7BC2CF315D745AF841C12DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD00CEE7A8FF83CCAD6B1AC0 /* DashboardView.swift */,
+				3F9452E28F1EAEC50D198555 /* DiagnosticsView.swift */,
+				FBE98BC090268C2D8F8EFB97 /* MarketView.swift */,
+				DCB2ED0F8BA8A3CF18C48AF3 /* PortfolioView.swift */,
+				8D4C60658756D3EDD421A82B /* ReasonsView.swift */,
+				C04B72944BC69035F7E7383E /* SettingsView.swift */,
+				7DDA808F5115F2E7AE46CBB9 /* Components */,
+				32A407413DA03F7197D5D2EA /* Dashboard */,
+				BE51E6E7FFE09A30C8334220 /* Market */,
+				E0CB21C0BD673F9FE4929778 /* Portfolio */,
+				26D239CC20B62527E7EA6101 /* Reasons */,
+				8BCD533060F2F6BC951ED90B /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD69A9EFE90344576587D621 /* InvestWiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A08E23A8178D61D461716 /* ClaudeAIServiceTests.swift */,
+				D37A3B1DE79E9F048C8DDBE2 /* InvestWiseTests.swift */,
+				CE1958661528C733C11091E8 /* MarketDataServiceTests.swift */,
+				1F82FD98C1DB7FA9DB19A529 /* ModelsTests.swift */,
+				E79BD5C067FDADF52A9ACEC5 /* NewsServiceTests.swift */,
+			);
+			path = InvestWiseTests;
+			sourceTree = "<group>";
+		};
+		E0CB21C0BD673F9FE4929778 /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A6CEBDBBF8EFF78685E2A45 /* InvestWiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79772F875C0F791B0A033C35 /* Build configuration list for PBXNativeTarget "InvestWiseTests" */;
+			buildPhases = (
+				C4C1B641CC1A7C0C13CC73DD /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				136D5938A94744A129CFE770 /* PBXTargetDependency */,
+			);
+			name = InvestWiseTests;
+			packageProductDependencies = (
+			);
+			productName = InvestWiseTests;
+			productReference = BCE74EB5C9856EEB8E11C507 /* InvestWiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5D5901329DD7FEADA197B7E /* InvestWise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9DF7919DBA77A61A5B90227 /* Build configuration list for PBXNativeTarget "InvestWise" */;
+			buildPhases = (
+				537C95294E70DBA728F9BBCE /* Sources */,
+				A36244548215E733B82B6D6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InvestWise;
+			packageProductDependencies = (
+			);
+			productName = InvestWise;
+			productReference = 415AF788FA04615B1E3ABF98 /* InvestWise.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8569D159293CE1BAE9C4FAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					0A6CEBDBBF8EFF78685E2A45 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					B5D5901329DD7FEADA197B7E = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6CBB914D87585478F932C847 /* Build configuration list for PBXProject "InvestWise" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A673557DA6A95B29B5F2F14A;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5D5901329DD7FEADA197B7E /* InvestWise */,
+				0A6CEBDBBF8EFF78685E2A45 /* InvestWiseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A36244548215E733B82B6D6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				729A7727854FE81877541D81 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		537C95294E70DBA728F9BBCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4750452DD4882DEFAFBF25E /* AIStrategy.swift in Sources */,
+				F444FD9597AE852899A2521D /* AllocationChart.swift in Sources */,
+				9B1892339B62DEB2E1D14E30 /* AppState.swift in Sources */,
+				2F690B72B7BB8B1709895F3F /* CacheManager.swift in Sources */,
+				21490C28652891EBBEB3FE58 /* CachedModels.swift in Sources */,
+				6AAD78A4D4C7C9A0A4427C81 /* ClaudeAIService.swift in Sources */,
+				098DBA4EE922CD4941FDB85D /* ContentView.swift in Sources */,
+				666AEE139A123599DE2F0511 /* DashboardView.swift in Sources */,
+				FDD87FAE54B60833FFA2E86E /* DataOrchestrator.swift in Sources */,
+				AC6F9DD424A8E2C588FCD364 /* DiagnosticsView.swift in Sources */,
+				20158D71F3BEFAEE95F17D94 /* GeminiModelRouter.swift in Sources */,
+				C3F33C1CB2AF483EFB5696C5 /* GeminiRateLimiter.swift in Sources */,
+				F72A13F1FA120B186CB7CDDF /* InvestWiseApp.swift in Sources */,
+				0537F5E903F52A18E0102BB7 /* KeychainService.swift in Sources */,
+				5995BEE50B3E1459D49B75B1 /* LoadingOverlay.swift in Sources */,
+				BCC655D649E5D43385D3C567 /* MarketData.swift in Sources */,
+				5154280AA036C41E0987FDBE /* MarketDataService.swift in Sources */,
+				D870C79A42C93F04619F894A /* MarketView.swift in Sources */,
+				03F067812794058BDFCB22F3 /* NewsItem.swift in Sources */,
+				1491D2ECF51251EDA965588C /* NewsService.swift in Sources */,
+				2F65AB61756C41357A5A8391 /* Portfolio.swift in Sources */,
+				D13142E733B617969E52E4B8 /* PortfolioView.swift in Sources */,
+				0F269DFEC0695DC7E6BF601F /* QuoteCard.swift in Sources */,
+				53B112027A0CD2305C20D70E /* ReasonsView.swift in Sources */,
+				EEE6BE1C6C82273F1528F33B /* RedditService.swift in Sources */,
+				6FCC8C69F1BC573E8CCB2AAD /* SentimentBadge.swift in Sources */,
+				D3175FAB0E9DACA3E68ADE49 /* SentimentService.swift in Sources */,
+				94D686BAD4BFDF8A0141F7CD /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4C1B641CC1A7C0C13CC73DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513FC1FDB1D2D91ED92E8729 /* ClaudeAIServiceTests.swift in Sources */,
+				27C7DD49418F7107D3268B52 /* InvestWiseTests.swift in Sources */,
+				7E1E7E6E3A78BE6DCC01358B /* MarketDataServiceTests.swift in Sources */,
+				13AA3F7B43C6B8FEFFC00867 /* ModelsTests.swift in Sources */,
+				484D3513FA3804019FE2ADAC /* NewsServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		136D5938A94744A129CFE770 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5D5901329DD7FEADA197B7E /* InvestWise */;
+			targetProxy = 217CDBD17C8F46B715B0F3A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D644DFB9DBE8A20534C4441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.investwise.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InvestWise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InvestWise";
+			};
+			name = Debug;
+		};
+		58D4482370DFB086F0BCE005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.investwise.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InvestWise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InvestWise";
+			};
+			name = Release;
+		};
+		BFBEC810A24EE631F39C9F03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJ8LY9FMZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InvestWise/Resources/Info.plist;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.investwise.app;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E0D2DEAEBEB240CD17B7F8AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA27CF3C2E6F58251DDB5BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1296AD831DEB08000D907DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QJ8LY9FMZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InvestWise/Resources/Info.plist;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.investwise.app;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CBB914D87585478F932C847 /* Build configuration list for PBXProject "InvestWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA27CF3C2E6F58251DDB5BDB /* Debug */,
+				E0D2DEAEBEB240CD17B7F8AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		79772F875C0F791B0A033C35 /* Build configuration list for PBXNativeTarget "InvestWiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D644DFB9DBE8A20534C4441 /* Debug */,
+				58D4482370DFB086F0BCE005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A9DF7919DBA77A61A5B90227 /* Build configuration list for PBXNativeTarget "InvestWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1296AD831DEB08000D907DF /* Debug */,
+				BFBEC810A24EE631F39C9F03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8569D159293CE1BAE9C4FAA /* Project object */;
+}
