@@ -68,7 +68,7 @@ struct StrategyPromptBuilder {
         }
         prompt += "\n\n## Recent News Headlines"
         for (i, item) in news.prefix(newsLimit).enumerated() {
-            prompt += "\n\(i+1). \(item.title) — \(item.source)"
+            prompt += "\n\(i+1). \(item.title) \u{2014} \(item.source)"
         }
         prompt += "\n\n## Reddit Trending Discussions"
         for post in redditPosts.prefix(redditLimit) {
@@ -169,9 +169,9 @@ final class AIService {
 
     private func callChipNemo(prompt: String, token: String) async throws -> String {
         let endpoint = UserDefaults.standard.string(forKey: AIProvider.chipnemoEndpointKey)
-            ?? "https://chipnemo-nvcf-proxy.sc-paas.nvidia.com/v1/internal/chipnemo/claude-sonnet-4"
+            ?? "https://chipnemo-models-api.nvidia.com/v1/internal/chipnemo/claude-opus-4-6"
         let model = UserDefaults.standard.string(forKey: AIProvider.chipnemoModelKey)
-            ?? "claude-sonnet-4"
+            ?? "us/aws/anthropic/us.anthropic.claude-opus-4-6"
 
         let baseURL = endpoint.hasSuffix("/chat/completions") ? endpoint : endpoint + "/chat/completions"
         guard let url = URL(string: baseURL) else { throw AIServiceError.invalidEndpoint }

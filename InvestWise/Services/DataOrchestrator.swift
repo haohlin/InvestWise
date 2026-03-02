@@ -18,9 +18,15 @@ final class DataOrchestrator: ObservableObject {
     @Published var sentimentScore: Double = 0
     @Published var sentimentLabel: AIStrategy.Sentiment = .neutral
     @Published var isLoading = false
+    @Published var isLoadingMore = false
     @Published var error: String?
     @Published var diagnosticLogs: [DiagnosticLog] = []
     @Published var lastGeminiModel: String?
+
+    private var newsPage = 1
+    private var redditAfterCursors: [String: String] = [:]
+    private var hasMoreNews = true
+    private var hasMoreReddit = true
 
     let aiService: AIService
     private let marketDataService: MarketDataService
@@ -59,6 +65,10 @@ final class DataOrchestrator: ObservableObject {
     func refreshData() async {
         isLoading = true
         error = nil
+        newsPage = 1
+        redditAfterCursors = [:]
+        hasMoreNews = true
+        hasMoreReddit = true
         log("Refresh", "Fetching market data, news, reddit...")
 
         // Fetch market data (non-fatal)
@@ -91,9 +101,11 @@ final class DataOrchestrator: ObservableObject {
 
         // Fetch reddit (non-fatal)
         do {
-            let r = try await redditService.fetchTrending()
-            redditPosts = r
-            log("Reddit", "Fetched \(r.count) posts")
+            let result = try await redditService.fetchTrending()
+            redditPosts = result.posts
+            redditAfterCursors = result.afterCursors
+            hasMoreReddit = !result.afterCursors.isEmpty
+            log("Reddit", "Fetched \(result.posts.count) posts")
         } catch is CancellationError {
             log("Reddit", "Cancelled — using cached data", isError: true)
         } catch {
@@ -105,6 +117,41 @@ final class DataOrchestrator: ObservableObject {
         sentimentScore = sentiment.score
         sentimentLabel = sentiment.label
         isLoading = false
+    }
+
+    var canLoadMore: Bool { hasMoreNews || hasMoreReddit }
+
+    func loadMore() async {
+        guard !isLoadingMore else { return }
+        isLoadingMore = true
+
+        if hasMoreNews {
+            newsPage += 1
+            do {
+                let moreNews = try await newsService.fetchNews(page: newsPage)
+                    .map { item in
+                        var tagged = item
+                        tagged.sentimentTag = SentimentService.tagSentiment(item.title + " " + (item.description ?? ""))
+                        return tagged
+                    }
+                if moreNews.isEmpty { hasMoreNews = false }
+                else { news.append(contentsOf: moreNews) }
+            } catch { hasMoreNews = false }
+        }
+
+        if hasMoreReddit {
+            do {
+                let result = try await redditService.fetchMore(
+                    subreddits: ["wallstreetbets", "investing", "stocks"],
+                    afterCursors: redditAfterCursors
+                )
+                if result.posts.isEmpty { hasMoreReddit = false }
+                else { redditPosts.append(contentsOf: result.posts) }
+                redditAfterCursors = result.afterCursors
+            } catch { hasMoreReddit = false }
+        }
+
+        isLoadingMore = false
     }
 
     /// Call the AI provider to generate strategy. Call this explicitly — never auto.

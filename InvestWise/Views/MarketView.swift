@@ -1,7 +1,15 @@
 import SwiftUI
 
+private struct MarketBottomOffsetKey: PreferenceKey {
+    static var defaultValue: CGFloat = .infinity
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = min(value, nextValue())
+    }
+}
+
 struct MarketView: View {
     @EnvironmentObject var orchestrator: DataOrchestrator
+    @State private var viewportHeight: CGFloat = 0
 
     var body: some View {
         NavigationStack {
@@ -14,10 +22,31 @@ struct MarketView: View {
 
                 if !orchestrator.redditPosts.isEmpty {
                     Section("Reddit Trending") {
-                        ForEach(orchestrator.redditPosts.prefix(10), id: \.permalink) { post in
+                        ForEach(orchestrator.redditPosts, id: \.permalink) { post in
                             redditRow(post)
                         }
                     }
+                }
+
+                if orchestrator.canLoadMore {
+                    Section {
+                        loadMoreIndicator
+                    }
+                }
+            }
+            .coordinateSpace(name: "list")
+            .background(
+                GeometryReader { geo in
+                    Color.clear
+                        .onAppear { viewportHeight = geo.size.height }
+                        .onChange(of: geo.size.height) { _, h in viewportHeight = h }
+                }
+            )
+            .onPreferenceChange(MarketBottomOffsetKey.self) { maxY in
+                guard viewportHeight > 0 else { return }
+                let overscroll = viewportHeight - maxY
+                if overscroll > 40, !orchestrator.isLoadingMore, orchestrator.canLoadMore {
+                    Task { await orchestrator.loadMore() }
                 }
             }
             .navigationTitle("Market")
@@ -30,6 +59,33 @@ struct MarketView: View {
                 }
             }
         }
+    }
+
+    private var loadMoreIndicator: some View {
+        VStack(spacing: 4) {
+            if orchestrator.isLoadingMore {
+                ProgressView()
+                    .controlSize(.small)
+                Text("Loading\u{2026}")
+                    .font(.caption2)
+            } else {
+                Image(systemName: "arrow.up")
+                    .imageScale(.small)
+                Text("Pull up for more")
+                    .font(.caption2)
+            }
+        }
+        .foregroundStyle(.secondary)
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
+        .background(
+            GeometryReader { geo in
+                Color.clear.preference(
+                    key: MarketBottomOffsetKey.self,
+                    value: geo.frame(in: .named("list")).maxY
+                )
+            }
+        )
     }
 
     private func quoteRow(_ quote: MarketQuote) -> some View {
@@ -63,6 +119,8 @@ struct MarketView: View {
                 HStack(spacing: 12) {
                     Label("\(post.score)", systemImage: "arrow.up")
                     Label("\(post.numComments)", systemImage: "bubble.right")
+                    Text("r/\(post.subreddit)")
+                        .foregroundStyle(.orange)
                 }
                 .font(.caption2)
                 .foregroundStyle(.secondary)

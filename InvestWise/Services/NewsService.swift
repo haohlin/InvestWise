@@ -9,18 +9,19 @@ final class NewsService {
         self.apiKey = apiKey
     }
 
-    func fetchNews(query: String = "stock market investment") async throws -> [NewsItem] {
+    func fetchNews(query: String = "stock market investment", page: Int = 1) async throws -> [NewsItem] {
         if let key = apiKey(), !key.isEmpty {
-            let items = try await fetchNewsAPI(query: query, key: key)
+            let items = try await fetchNewsAPI(query: query, key: key, page: page)
             if !items.isEmpty { return items }
         }
-        // Fallback: try multiple RSS sources
+        // Fallback: RSS doesn't support pagination, return empty for page > 1
+        if page > 1 { return [] }
         return try await fetchRSSNews()
     }
 
-    private func fetchNewsAPI(query: String, key: String) async throws -> [NewsItem] {
+    private func fetchNewsAPI(query: String, key: String, page: Int = 1) async throws -> [NewsItem] {
         let encoded = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-        let url = URL(string: "https://newsapi.org/v2/everything?q=\(encoded)&language=en&sortBy=publishedAt&pageSize=20&apiKey=\(key)")!
+        let url = URL(string: "https://newsapi.org/v2/everything?q=\(encoded)&language=en&sortBy=publishedAt&pageSize=20&page=\(page)&apiKey=\(key)")!
         let (data, _) = try await session.data(from: url)
         return try Self.parseNewsAPIResponse(data: data)
     }
