@@ -1,0 +1,46 @@
+name: InvestWise
+options:
+  bundleIdPrefix: com.investwise
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "Apple Development"
+    DEVELOPMENT_TEAM: ""
+targets:
+  InvestWise:
+    type: application
+    platform: iOS
+    sources:
+      - InvestWise
+    settings:
+      base:
+        INFOPLIST_GENERATION_MODE: GeneratedFile
+        PRODUCT_BUNDLE_IDENTIFIER: com.investwise.app
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: 1
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: true
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+  InvestWiseTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - InvestWiseTests
+    dependencies:
+      - target: InvestWise
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.investwise.tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/InvestWise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InvestWise"
+        BUNDLE_LOADER: "$(TEST_HOST)"
