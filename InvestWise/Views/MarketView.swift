@@ -24,7 +24,7 @@ struct MarketView: View {
             .refreshable {
                 await withCheckedContinuation { continuation in
                     Task {
-                        await orchestrator.refresh()
+                        await orchestrator.refreshData()
                         continuation.resume()
                     }
                 }

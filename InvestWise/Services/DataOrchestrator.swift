@@ -107,12 +107,6 @@ final class DataOrchestrator: ObservableObject {
         isLoading = false
     }
 
-    /// Full refresh: data + AI analysis (used by pull-to-refresh)
-    func refresh() async {
-        await refreshData()
-        await analyzeWithAI()
-    }
-
     /// Call the AI provider to generate strategy. Call this explicitly — never auto.
     @Published var isAnalyzing = false
 

@@ -157,7 +157,7 @@ struct DashboardView: View {
     private func triggerRefresh() async {
         await withCheckedContinuation { continuation in
             Task {
-                await orchestrator.refresh()
+                await orchestrator.refreshData()
                 continuation.resume()
             }
         }
