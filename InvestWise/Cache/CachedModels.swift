@@ -14,7 +14,7 @@ final class CachedStrategy {
         self.summary = strategy.summary
         self.sentiment = strategy.sentiment.rawValue
         self.confidence = strategy.confidence
-        self.reasonsJSON = try JSONEncoder().encode(strategy.top5reasons)
+        self.reasonsJSON = try JSONEncoder().encode(strategy.reasons)
         self.allocationJSON = try JSONEncoder().encode(strategy.allocation)
         self.cachedAt = Date()
     }
@@ -22,7 +22,7 @@ final class CachedStrategy {
     func toStrategy() throws -> AIStrategy {
         let reasons = try JSONDecoder().decode([StrategyReason].self, from: reasonsJSON)
         let allocation = try JSONDecoder().decode(AssetAllocation.self, from: allocationJSON)
-        return AIStrategy(summary: summary, sentiment: AIStrategy.Sentiment(rawValue: sentiment) ?? .neutral, confidence: confidence, top5reasons: reasons, allocation: allocation)
+        return AIStrategy(summary: summary, sentiment: AIStrategy.Sentiment(rawValue: sentiment) ?? .neutral, confidence: confidence, reasons: reasons, allocation: allocation)
     }
 }
 

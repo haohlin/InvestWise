@@ -48,11 +48,11 @@ enum AIProvider: String, CaseIterable, Codable {
 
 struct StrategyPromptBuilder {
     static func buildPrompt(quotes: [MarketQuote], news: [NewsItem], redditPosts: [RedditPost], portfolio: Portfolio, compactMode: Bool = false) -> String {
-        let newsLimit = compactMode ? 5 : 10
-        let redditLimit = compactMode ? 2 : 5
+        let newsLimit = compactMode ? 5 : 15
+        let redditLimit = compactMode ? 3 : 10
 
         var prompt = """
-        You are an investment strategy advisor. Analyze the following market data and provide actionable investment advice.
+        You are an investment strategy advisor. Analyze the following market data and provide actionable investment advice. For every reason you give, cite the specific data points (ticker symbols, price moves, news headlines, Reddit post titles) that led you to that conclusion.
 
         ## Portfolio Context
         - Total value: $\(Int(portfolio.totalValue)) USD
@@ -68,11 +68,11 @@ struct StrategyPromptBuilder {
         }
         prompt += "\n\n## Recent News Headlines"
         for (i, item) in news.prefix(newsLimit).enumerated() {
-            prompt += "\n\(i+1). \(item.title) \u{2014} \(item.source)"
+            prompt += "\n\(i+1). [\(item.source)] \(item.title)"
         }
         prompt += "\n\n## Reddit Trending Discussions"
         for post in redditPosts.prefix(redditLimit) {
-            prompt += "\n- \(post.title) (score: \(post.score), comments: \(post.numComments))"
+            prompt += "\n- [r/\(post.subreddit)] \(post.title) (score: \(post.score), comments: \(post.numComments))"
         }
         prompt += """
 
@@ -82,12 +82,21 @@ struct StrategyPromptBuilder {
           "summary": "1-2 sentence actionable suggestion",
           "sentiment": "bullish" | "bearish" | "neutral",
           "confidence": 0.0-1.0,
-          "top5reasons": [
-            {"title": "short title", "explanation": "2-3 sentences", "type": "bullish"|"bearish"|"neutral", "confidence": "high"|"medium"|"low"}
+          "reasons": [
+            {
+              "title": "short title",
+              "explanation": "2-3 sentences explaining the reasoning",
+              "type": "bullish" | "bearish" | "neutral",
+              "confidence": "high" | "medium" | "low",
+              "sources": ["SPY +0.58%", "Reuters: Fed holds rates", "r/wallstreetbets: SPY to the moon (score 1200)"]
+            }
           ],
           "allocation": {"stocks": int, "bonds": int, "cash": int, "alternatives": int}
         }
-        The allocation percentages must sum to 100. Provide exactly 5 reasons.
+        Rules:
+        - The allocation percentages must sum to 100.
+        - Provide as many reasons as the data supports (typically 3-8). Do not pad or limit to a fixed number.
+        - Each reason MUST include a "sources" array citing the specific data points (market quotes, news headlines, Reddit posts) that support it. Use the exact values from the data above.
         """
         return prompt
     }

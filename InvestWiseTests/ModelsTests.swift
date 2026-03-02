@@ -13,11 +13,12 @@ final class ModelsTests: XCTestCase {
 
     func testAIStrategyDecoding() throws {
         let json = """
-        {"summary":"Shift 15% from cash to S&P 500 ETF","sentiment":"bullish","confidence":0.75,"top5reasons":[{"title":"Strong momentum","explanation":"S&P up 12% YTD","type":"bullish","confidence":"high"}],"allocation":{"stocks":60,"bonds":25,"cash":10,"alternatives":5}}
+        {"summary":"Shift 15% from cash to S&P 500 ETF","sentiment":"bullish","confidence":0.75,"reasons":[{"title":"Strong momentum","explanation":"S&P up 12% YTD","type":"bullish","confidence":"high","sources":["SPY +0.58%"]}],"allocation":{"stocks":60,"bonds":25,"cash":10,"alternatives":5}}
         """.data(using: .utf8)!
         let strategy = try JSONDecoder().decode(AIStrategy.self, from: json)
         XCTAssertEqual(strategy.sentiment, .bullish)
-        XCTAssertEqual(strategy.top5reasons.count, 1)
+        XCTAssertEqual(strategy.reasons.count, 1)
+        XCTAssertEqual(strategy.reasons[0].sources, ["SPY +0.58%"])
         XCTAssertEqual(strategy.allocation.stocks, 60)
     }
 

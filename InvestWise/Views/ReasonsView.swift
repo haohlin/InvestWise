@@ -11,7 +11,7 @@ struct ReasonsView: View {
                 } else {
                     VStack(spacing: 16) {
                         ContentUnavailableView(
-                            "No Strategy Yet",
+                            "No Analysis Yet",
                             systemImage: "lightbulb.slash",
                             description: Text("Tap the button below to analyze current market data with AI.")
                         )
@@ -34,7 +34,7 @@ struct ReasonsView: View {
                     }
                 }
             }
-            .navigationTitle("Top 5 Reasons")
+            .navigationTitle("Analysis")
             .refreshable { await triggerRefresh() }
         }
     }
@@ -51,7 +51,7 @@ struct ReasonsView: View {
                 }
                 .padding(.horizontal)
 
-                ForEach(Array(strategy.top5reasons.enumerated()), id: \.offset) { index, reason in
+                ForEach(Array(strategy.reasons.enumerated()), id: \.offset) { index, reason in
                     reasonCard(index: index + 1, reason: reason)
                 }
             }
@@ -82,6 +82,24 @@ struct ReasonsView: View {
                 Text(reason.explanation)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+
+                if !reason.sources.isEmpty {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("Sources")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(.teal)
+                        ForEach(reason.sources, id: \.self) { source in
+                            HStack(alignment: .top, spacing: 4) {
+                                Text("\u{2022}")
+                                    .font(.caption2)
+                                Text(source)
+                                    .font(.caption2)
+                            }
+                            .foregroundStyle(.tertiary)
+                        }
+                    }
+                    .padding(.top, 2)
+                }
             }
         }
         .padding()
